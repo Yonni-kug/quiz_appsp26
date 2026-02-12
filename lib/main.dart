@@ -4,10 +4,7 @@ import 'package:quiz_appsp26/start_screen.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Scaffold(
-      body: Quiz(),
-      ),
-    ),
-  );                                                  
+    home:Quiz(),
+  ));
 }                                                                        
 
