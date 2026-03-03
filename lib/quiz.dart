@@ -1,21 +1,37 @@
 //quiz.dart
 import 'package:flutter/material.dart';
+import 'package:quiz_appsp26/data/questions.dart';
 import 'package:quiz_appsp26/questions_screen.dart';
+import 'package:quiz_appsp26/results_screen.dart';
 import 'package:quiz_appsp26/start_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
-
+  @override
   State<Quiz> createState() {
     return _QuizState();
   }
 }
 
 class _QuizState extends State<Quiz> {
+  List<String> selectedAnswers = [];
+
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+    if (selectedAnswers.length == questions.length){
+      setState(() {
+        activeScreen = ResultsScreen(chosenAnswers: selectedAnswers,);
+      });
+     }
+    }
+    
+
+
   Widget? activeScreen;
   void switchScreen() {
     setState(() {
-      activeScreen = QuestionsScreen();
+      activeScreen = QuestionsScreen(
+        onSelectAnswer: chooseAnswer);
     });
   }
 
@@ -34,7 +50,7 @@ class _QuizState extends State<Quiz> {
             gradient: LinearGradient(
               colors: [
                 Color.fromARGB(255, 63, 8, 165),
-                Color.fromARGB(255, 12, 1, 39),
+                Color.fromARGB(255, 60, 232, 63),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
