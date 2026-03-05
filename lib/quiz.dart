@@ -31,7 +31,7 @@ class _QuizState extends State<Quiz> {
   void switchScreen() {
     setState(() {
       activeScreen = QuestionsScreen(
-        onSelectAnswer: chooseAnswer);
+        onSelectedAnswer: chooseAnswer);
     });
   }
 

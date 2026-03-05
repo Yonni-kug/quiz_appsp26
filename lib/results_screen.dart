@@ -16,7 +16,7 @@ class ResultsScreen extends StatelessWidget{
           children:  [
             const Text('You answered X out of Y questions Correctly', style: TextStyle(color: Colors.white)),
             const SizedBox(height:30,),
-            const Text('List of Answers and Questions', style: TextStyle(color: Colors.white)),
+            const Text('List of Answers and Questions'),
             const SizedBox(height:30,),
             TextButton(
               onPressed: (){},
