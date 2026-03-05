@@ -13,7 +13,7 @@ const questions = [
   QuizQuestion(
     'What is the name of the musical symbol that indicates the pitch of a note?',
     [
-      "Clef",
+      "Clef",//Correct answer
       "Rest",
       "Accidental",
       "Time Signature"
@@ -22,7 +22,7 @@ const questions = [
   QuizQuestion(
     'If you wish to repeat a measure, what symbol would you use?',
     [
-      "Repeat Sign",
+      "Repeat Sign",//Correct answer
       "Fermata",
       "Coda",
       "Segno"
@@ -48,4 +48,14 @@ const questions = [
         "All of the above" //Correct answer
       ]
     ),
+
+      QuizQuestion(
+        "What is the term for the process of adjusting the levels and balance of individual tracks in a music production?",
+        [
+          "Mixing", //Correct answer
+          "Mastering",
+          "Recording",
+          "Composing"
+        ]
+      ),
 ];
