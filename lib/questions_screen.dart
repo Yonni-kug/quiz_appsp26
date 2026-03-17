@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'data/questions.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key, required this.onSelectedAnswer});
+  const QuestionsScreen(switchScreen, {super.key, required this.onSelectedAnswer});
 
   final void Function(String answer) onSelectedAnswer;
   @override

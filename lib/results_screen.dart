@@ -1,11 +1,17 @@
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_appsp26/data/questions.dart';
 import 'package:quiz_appsp26/questions_summary.dart';
+
 class ResultsScreen extends StatelessWidget{
   const ResultsScreen({super.key,
-   required this.chosenAnswers});
+   required this.chosenAnswers,
+   required this.switchScreen});
+   
 
   final List<String> chosenAnswers;
+  final void Function() switchScreen;
 
   List<Map<String, Object>> getSummaryData(){
     List<Map<String, Object>> summary = [];
@@ -13,13 +19,21 @@ class ResultsScreen extends StatelessWidget{
       summary.add({
         'question_index': i,
         'question': questions[i].question,
-        'correct answer': questions[i].answers[0],
-        'user answer': chosenAnswers[i]
+        'correct_answer': questions[i].answers[0],
+        'user_answer': chosenAnswers[i],
 
       });
     }
     return summary;
+    
   }
+
+
+  void setScreen() {
+    chosenAnswers.clear();
+    switchScreen();
+  }
+
   @override
   Widget build(context)
   {
@@ -32,17 +46,22 @@ class ResultsScreen extends StatelessWidget{
       width: double.infinity,
       child: Container(
         margin: const EdgeInsets.all(40),
-        child:  Column(
+        child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
-            Text('You answered $numTotalCorrect out of $numTotalQuestions Correctly', style: const TextStyle(color: Colors.white)),
+            Text('You answered $numTotalCorrect out of $numTotalQuestions Correctly', style:GoogleFonts.lato( color: Colors.white)),
             const SizedBox(height:30,),
             QuestionsSummary(summaryData: summaryData),
-            const Text('List of Answers and Questions'),
+            const Text('Try again?', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold,)),
             const SizedBox(height:30,),
             TextButton(
-              onPressed: (){},
-              child: const Text('Restart Quiz', style: TextStyle(color: Colors.white)),
+              onPressed: (){
+                setScreen();
+              },
+               style: TextButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
+              child: const Text('Restart Quiz?', style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold,)),
             )
           ],
         ),
