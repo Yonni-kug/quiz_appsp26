@@ -9,15 +9,17 @@ final List<Map<String, Object>> summaryData;
       children: summaryData.map(
         (data){
           return Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(((data['question_index'] as int)+1).toString()),
+              Text('#${(data['question_index'] as int)+1}: ',textAlign: TextAlign.left, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),),
               Expanded(
                 child: Column(
                   children: [
-                    Text(data['question'] as String),
-                    const SizedBox(height: 5, ),
-                    Text(data['user_answer'] as String, style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 16),),
-                    Text(data['correct_answer'] as String,style: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 16),),
+                    Text(data['question'] as String, textAlign: TextAlign.left, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white),),
+                    const SizedBox(height: 3, width: double.infinity,),
+                    Text(data['user_answer'] as String, textAlign: TextAlign.left, style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 14),),
+                    Text(data['correct_answer'] as String,textAlign: TextAlign.left, style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 14),),
                   ],
                 ),
               )
