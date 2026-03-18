@@ -17,7 +17,7 @@ class StartScreen extends StatelessWidget {
             ),
             const SizedBox(height: 80),
             Text(
-              "Challenge yourself on this quiz!",
+              "Challenge yourself on this music quiz!",
               style: TextStyle(color: Colors.white, fontSize: 22),
             ),
             const SizedBox(height: 30),
