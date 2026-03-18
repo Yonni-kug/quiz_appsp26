@@ -49,17 +49,17 @@ class ResultsScreen extends StatelessWidget{
         child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
-            Text('You answered $numTotalCorrect out of $numTotalQuestions Correctly', style:GoogleFonts.lato( color: Colors.white)),
+            Text('You answered $numTotalCorrect out of $numTotalQuestions Correctly',textAlign: TextAlign.center, style:GoogleFonts.lato( color: Colors.white, fontSize: 25, ),),
             const SizedBox(height:30,),
             QuestionsSummary(summaryData: summaryData),
-            const Text('Try again?', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold,)),
+            const Text('Try again?', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold,)),
             const SizedBox(height:30,),
             TextButton(
               onPressed: (){
                 setScreen();
               },
                style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Color.fromARGB(255, 12, 29, 210),
               ),
               child: const Text('Restart Quiz?', style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold,)),
             )

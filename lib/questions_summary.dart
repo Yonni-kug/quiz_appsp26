@@ -16,10 +16,10 @@ final List<Map<String, Object>> summaryData;
               Expanded(
                 child: Column(
                   children: [
-                    Text(data['question'] as String, textAlign: TextAlign.left, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white),),
+                    Text(data['question'] as String, textAlign: TextAlign.center, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white),),
                     const SizedBox(height: 3, width: double.infinity,),
-                    Text(data['user_answer'] as String, textAlign: TextAlign.left, style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 14),),
-                    Text(data['correct_answer'] as String,textAlign: TextAlign.left, style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 14),),
+                    Text(data['user_answer'] as String, textAlign: TextAlign.center, style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 12),),
+                    Text(data['correct_answer'] as String,textAlign: TextAlign.center, style: const TextStyle(color: Color.fromARGB(255, 12, 29, 210), fontWeight: FontWeight.bold, fontSize: 12),),
                   ],
                 ),
               )
